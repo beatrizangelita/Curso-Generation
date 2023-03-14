@@ -11,21 +11,21 @@ public class Atividade4 {
 
 	public static void main(String[] args) {
 		
-		double n1, n2, n3, n4, diferenca;
+		float n1, n2, n3, n4, diferenca;
 		
 		Scanner leia = new Scanner(System.in);
 		
 		System.out.println("\n Digite o primeiro número: ");
-		n1 = leia.nextDouble();
+		n1 = leia.nextFloat();
 		
 		System.out.println("\n Digite o segundo número: ");
-		n2 = leia.nextDouble();
+		n2 = leia.nextFloat();
 		
 		System.out.println("\n Digite o terceiro número: ");
-		n3 = leia.nextDouble();
+		n3 = leia.nextFloat();
 		
 		System.out.println("\n Digite o querto número: ");
-		n4 = leia.nextDouble();
+		n4 = leia.nextFloat();
 		
 		diferenca = (n1 * n2 ) - (n3 * n4);
 		
