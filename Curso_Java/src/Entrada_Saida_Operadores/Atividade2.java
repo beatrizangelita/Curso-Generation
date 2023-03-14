@@ -8,21 +8,21 @@ public class Atividade2 {
 
 	public static void main(String[] args) {
 		
-		double nota1, nota2, nota3, nota4, media;
+		float nota1, nota2, nota3, nota4, media;
 		
 		Scanner leia = new Scanner(System.in);
 		
 		System.out.println("\n Digite a primeira nota: ");
-		nota1 = leia.nextDouble();
+		nota1 = leia.nextFloat();
 		
 		System.out.println("\n Digite a segunda nota: ");
-		nota2 = leia.nextDouble();
+		nota2 = leia.nextFloat();
 		
 		System.out.println("\n Digite a terceira nota: ");
-		nota3 = leia.nextDouble();
+		nota3 = leia.nextFloat();
 		
 		System.out.println("\n Digite a quarta nota: ");
-		nota4 = leia.nextDouble();
+		nota4 = leia.nextFloat();
 		
 		media = (nota1 + nota2 + nota3 + nota4) / 4;
 		
