@@ -10,21 +10,21 @@ public class Atividade3 {
 
 	public static void main(String[] args) {
 		
-		double salarioBruto, adicionalNoturno, horasExtras, descontos, salarioLiquido;
+		float salarioBruto, adicionalNoturno, horasExtras, descontos, salarioLiquido;
 		
 		Scanner leia = new Scanner(System.in);
 		
 		System.out.println("\n Informe o Salário Bruto: ");
-		salarioBruto = leia.nextDouble();
+		salarioBruto = leia.nextFloat();
 		
 		System.out.println("\n Informe o Adicional Noturno: ");
-		adicionalNoturno = leia.nextDouble();
+		adicionalNoturno = leia.nextFloat();
 		
 		System.out.println("\n Informe as Horas Extras: ");
-		horasExtras = leia.nextDouble();
+		horasExtras = leia.nextFloat();
 		
 		System.out.println("\n Informe os Descontos: ");
-		descontos = leia.nextDouble();
+		descontos = leia.nextFloat();
 		
 		salarioLiquido = salarioBruto + adicionalNoturno + (horasExtras * 5) - descontos;
 		
