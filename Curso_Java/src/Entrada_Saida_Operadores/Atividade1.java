@@ -8,15 +8,15 @@ public class Atividade1 {
 
 	public static void main(String[] args) {
 		
-		double salario, abono, novoSalario;
+		float salario, abono, novoSalario;
 		
 		Scanner leia = new Scanner(System.in); 
 		
 		System.out.println("\n Informe o Salário: ");
-		salario = leia.nextDouble();
+		salario = leia.nextFloat();
 		
 		System.out.println("\n Informe o abono");
-		abono = leia.nextDouble();
+		abono = leia.nextFloat();
 		
 		novoSalario = salario + abono;
 		
