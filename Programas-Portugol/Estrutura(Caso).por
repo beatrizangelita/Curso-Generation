@@ -4,7 +4,7 @@ programa
 	funcao inicio()
 	{
 		inteiro mes
-		escreva("Digite um número de 1 a 12, para saber o mês correspondente: ")
+		escreva("Digite um número de 1 ao 12, para saber o mês correspondente: ")
 		leia(mes)
 
 			escolha(mes){
@@ -68,7 +68,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 776; 
+ * @POSICAO-CURSOR = 82; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
