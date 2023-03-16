@@ -41,37 +41,37 @@ public class Atividade6 {
 		case 1:
 			System.out.println("\n Nome do colaborador: " + nome);
 			System.out.println(" Cargo: Gerente");
-			novoSalario = salario + (10 / 100 * salario);
+			novoSalario = salario + ((10 * salario)/100);
 			System.out.printf(" Salário: $ %.2f", novoSalario);
 			break;
 		case 2:
 			System.out.println("\n Nome do colaborador: " + nome);
 			System.out.println("\n Cargo: Vendedor");
-			novoSalario = salario + (7 / 100 * salario);
+			novoSalario = salario + ((7 * salario)/100);
 			System.out.printf("\n Salário: $ %.2f", novoSalario);
 			break;
 		case 3:
 			System.out.println("\n Nome do colaborador: " + nome);
 			System.out.println("\n Cargo: Supervisor");
-			novoSalario = salario + (9 / 100 * salario);
+			novoSalario = salario + ((9 * salario)/100);
 			System.out.printf("\n Salário: $ %.2f", novoSalario);
 			break;
 		case 4:
 			System.out.println("\n Nome do colaborador: " + nome);
 			System.out.println("\n Cargo: Motorista");
-			novoSalario = salario + (6 / 100 * salario);
+			novoSalario = salario + ((6 * salario)/100);
 			System.out.printf("\n Salário: $ %.2f", novoSalario);
 			break;
 		case 5:
 			System.out.println("\n Nome do colaborador: " + nome);
 			System.out.println("\n Cargo: Estoquista");
-			novoSalario = salario + (5 / 100 * salario);
+			novoSalario = salario + ((5 * salario)/100);
 			System.out.printf("\n Salário: $ %.2f", novoSalario);
 			break;
 		case 6:
 			System.out.println("\n Nome do colaborador: " + nome);
 			System.out.println("\n Cargo: Técnico de TI");
-			novoSalario = salario + (8 / 100 * salario);
+			novoSalario = salario + ((8 * salario)/100);
 			System.out.printf("\n Salário: $ %.2f", novoSalario);
 			break;
 			

@@ -9,10 +9,61 @@
 
 package Lacos_Condicionais;
 
+import java.util.Scanner;
+
 public class Atividade8 {
 
 	public static void main(String[] args) {
 		
+		float deposito, saque, saldo = 1000, saldoAtual;
+		int op = 0;
+		
+		Scanner leia = new Scanner (System.in);
+		
+		System.out.println("\n\t\t Informe a opção desejada! ");
+		
+		System.out.println(" 1 - Saldo");
+		System.out.println(" 2 - Saque");
+		System.out.println(" 3 - Depósito");
+		
+		System.out.println("\n Digite o código da operação: ");
+		op = leia.nextInt();
+		
+		switch(op) {
+			
+		case 1:
+			System.out.printf("\n Operação - Saldo \n Saldo: $ %.2f", saldo);
+			break;
+			
+		case 2: 
+			System.out.println("\n Operação - Saque");
+			
+			System.out.println("\n Informe o valor para saque: ");
+			saque = leia.nextInt();	
+			
+			if(saque > saldo) {
+				System.out.println("Saldo insulficiente!");
+				}
+			else {
+				saldoAtual = saldo - saque;
+				System.out.printf("Seu saldo atual é: $ %.2f!", saldoAtual);
+			}
+			break;
+			
+		case 3: 
+			System.out.println("\n Operação - Depósito");
+			
+			System.out.println("\n Informe o valor do depósito: ");
+			deposito = leia.nextInt();	
+			
+			saldoAtual = deposito + saldo;
+			System.out.printf("\n Seu saldo atual é $ %.2f: ", saldoAtual);
+			break;
+			
+		default : 
+			System.out.println("\n Operação inválida! ");
+				
+		}
 
 	}
 
