@@ -23,16 +23,20 @@ public class Atividade1 {
 		System.out.println("Informe o segundo número: ");
 		num2 = leia.nextInt();
 		
-		for ( num1 = 0; num1 <= num2; num1++) {
+		if(num1 > num2) {
+			System.out.print("\n Invalido");
+		}
+		
+		
+		for (; num1 <= num2; num1++) {
 			
 	        if (num1 % 3 == 0 && num1 % 5 == 0) {
 	            System.out.print("\n Números multiplos de 3 e 5: " + num1);
 	        }
-	        else {
-	        	System.out.print("\n Invalido ");
-	        }
+	       /* else {
+	        	System.out.print("\n Número não é multiplos!"); Mostra a mensagem nos números que não são multiplos de 3 e 5!
+	        }*/
 	    }
-
 	}
 
 }
