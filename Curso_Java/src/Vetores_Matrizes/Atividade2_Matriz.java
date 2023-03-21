@@ -15,6 +15,39 @@ public class Atividade2_Matriz {
 
 		Scanner leia = new Scanner(System.in);
 
+		int i = 0, j = 0, y = 0, m = 0;
+		String[] participante = new String[10];
+		double[][] nota = new double[10][4];
+		double[] media = new double[m];
+
+		// Condição para gravar o nome dos alunos
+		for (i = 0; i < 10; i++) {
+			System.out.println("Qual nome do " + (i + 1) + "º participante: ");
+			participante[i] = leia.nextLine();
+			leia.nextLine(); // limpa cache
+
+			// Condição para gravar as notas dos alunos por bimestre
+			for (j = 0; j < 10; j++) {
+				for (y = 0; y < 4; y++) {
+						System.out.println("Qual nota do aluno(a) " 
+								+ participante[i] + " para o " + (y + 1) + "º bimestre: ");
+					nota[j][y] = leia.nextDouble();
+					leia.nextLine(); // limpa cache
+				}
+			}
+
+		}
+
+		// Condição para calcular a média do aluno
+		for (i = 0; i < 10; i++) {
+			for (y = 0; y < 4; j++) {
+				media[m] += nota[j][y];
+			}
+			media[m] /= 4;
+		}
+
+		System.out.printf("\n Nota do aluno " +participante[i] + media[m]);
+
 	}
 
 }
