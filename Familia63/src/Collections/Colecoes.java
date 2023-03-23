@@ -58,7 +58,7 @@ public class Colecoes {
 		Collections.sort(primeiraLista); 
 		System.out.println("\n Depois de ordenado: " +primeiraLista);
 		
-		// Estrutura do Set 
+		// Estrutura do Set (Ele irá tirar a duplicação)
 		
 		Set<Integer> meuSet = new HashSet<Integer>();
 	
