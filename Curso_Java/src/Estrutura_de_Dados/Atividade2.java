@@ -48,7 +48,7 @@ public class Atividade2 {
 			switch (op) {
 			case 1:
 				System.out.print("Favor informar o nome do novo cliente: \n");
-				leia.next();
+				leia.nextLine();
 				cliente = leia.nextLine();
 				menu.add(cliente);
 				break;
@@ -63,8 +63,8 @@ public class Atividade2 {
 				break;
 
 			case 3:
-				System.out.print("Cliente retirado da fila: \n" + menu.poll());
-				System.out.println(menu);
+				System.out.print("Cliente retirado da fila: " + menu.poll());
+				System.out.println("\n\n"+menu);
 				break;
 
 			case 0:

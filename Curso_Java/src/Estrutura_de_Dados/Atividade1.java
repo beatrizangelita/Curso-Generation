@@ -49,7 +49,7 @@ public class Atividade1 {
 			switch (op) {
 			case 1:
 				System.out.print("Favor informar o nome do Livro: \n");
-				leia.next();
+				leia.nextLine();
 				livro = leia.nextLine();
 				menu.push(livro);
 				break;
