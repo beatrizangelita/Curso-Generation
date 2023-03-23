@@ -29,16 +29,18 @@ public class Atividade2_Matriz {
 			// Condição para gravar as notas dos alunos por bimestre
 			for (j = 0; j < 10; j++) {
 				for (y = 0; y < 4; y++) {
-						System.out.println("Qual nota do aluno(a) " 
-								+ participante[i] + " para o " + (y + 1) + "º bimestre: ");
+					System.out.println("Qual nota do aluno(a) " + participante[i] + " para o " + (y + 1) + "º bimestre: ");
 					nota[j][y] = leia.nextDouble();
 					leia.nextLine(); // limpa cache
+					
 				}
+				break;
 			}
 
 		}
 
-		// Condição para calcular a média do aluno
+		// NÃO ESTÁ FUNCIONANDO
+		// Condição para calcular a média do aluno 
 		for (i = 0; i < 10; i++) {
 			for (y = 0; y < 4; j++) {
 				media[m] += nota[j][y];

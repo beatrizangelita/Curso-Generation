@@ -17,11 +17,37 @@ public class Atividade2_Vetor {
 
 		Scanner leia = new Scanner(System.in);
 
-		int[][] numeros = new int[3][3];
-		int linha, coluna, somaMatriz = 0, somaDiagonal = 0;
-	
+		int[] numeros = new int[10];
+		int par = 0, impar = 0, soma = 0;
+		float media = 0;
 		
+		// condição para guardar os valores digitados no vetor
+		for (int i = 0; i < 10; i++) {
+			System.out.println("Digite o " + i + " º número: ");
+			numeros[i] = leia.nextInt();
+			
+			// soma dos valores digitados
+			soma += numeros[i];
+			
+			// media dos valores digitados
+			media = soma / numeros[i];
+			
+			// Irá contar os números pares digitados
+            if(numeros[i] % 2 == 0){
+                par++;
+            }
+
+            // Irá contar os números impares digitados
+            if(numeros[i] % 2 == 1){
+                impar++;
+            }
+			
+		}
 		
+		System.out.println("\n A soma dos valores digitados é: " + soma);
+		System.out.printf(" A média dos valores digitados é: %.2f ", media);
+		System.out.println("\n Todos os valores digitados par: " + par);
+		System.out.println(" Todos os valores digitados impar: " + impar);
 		
 	}
 
