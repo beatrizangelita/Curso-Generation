@@ -3,16 +3,16 @@ package POO;
 public class AtividadeCliente {
 
 	// Atributo
-	private String nomeCliente;
+	private String nome;
 	private String genero;
 	private int telefone;
 	private int idade;
 	private String email;
 	
 	// Construtor
-	public AtividadeCliente(String nomeCliente, String genero, int telefone, int idade, String email) {
+	public AtividadeCliente(String nome, String genero, int telefone, int idade, String email) {
 		super();
-		this.nomeCliente = nomeCliente;
+		this.nome = nome;
 		this.genero = genero;
 		this.telefone = telefone;
 		this.idade = idade;
@@ -21,12 +21,12 @@ public class AtividadeCliente {
 	
 	// Metodos GET / SET
 
-	public String getNomeCliente() {
-		return nomeCliente;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setNomeCliente(String nomeCliente) {
-		this.nomeCliente = nomeCliente;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public String getGenero() {
@@ -62,8 +62,8 @@ public class AtividadeCliente {
 	}
 	
 	
-	public void imprimir() {
-		System.out.println("Cliente: " + nomeCliente + ", Genero: " + genero + ", Telefone: " + telefone + ", Idade: " + idade + ", Email: " + email);
+	public void visualizarCliente() {
+		System.out.println(" Nome: " + nome + "\n Genero: " + genero + "\n Telefone: " + telefone + "\n Idade: " + idade + "\n Email: " + email + "\n");
 	}
 	
 }
