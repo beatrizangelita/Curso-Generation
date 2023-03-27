@@ -2,19 +2,47 @@ package conta;
 
 import java.util.Scanner;
 import conta.util.Cores;
+import conta.model.Conta;
+import conta.model.ContaCorrente;
+import conta.model.ContaPoupanca;
 
 public class Menu {
 
 	public static void main(String[] args) {
 
+		// Teste da Classe Conta
+		Conta conta = new Conta(1, 123, 1, "Adriana", 10000.0f);
+		conta.visualizar();
+		conta.sacar(12000.0f);
+		conta.visualizar();
+		conta.depositar(5000.0f);
+		conta.visualizar();
+
+		// Teste da Classe Conta Corrente
+		ContaCorrente contaCorrente = new ContaCorrente(1, 123, 1, "José da Silva", 0.0f, 1000.0f);
+		contaCorrente.visualizar();
+		contaCorrente.sacar(12000.0f);
+		contaCorrente.visualizar();
+		contaCorrente.depositar(5000.0f);
+		contaCorrente.visualizar();
+
+		// Teste da Classe Conta Poupança
+		ContaPoupanca ContaPoupanca = new ContaPoupanca(2, 123, 2, "Maria dos Santos", 100000.0f, 15);
+		ContaPoupanca.visualizar();
+		ContaPoupanca.sacar(1000.0f);
+		ContaPoupanca.visualizar();
+		ContaPoupanca.depositar(5000.0f);
+		ContaPoupanca.visualizar();
+
 		Scanner leia = new Scanner(System.in);
 
 		int op;
-		
-		while(true) {
-			
+
+		while (true) {
+
 			System.out.println("\n");
-			System.out.println(Cores.TEXT_WHITE + Cores.ANSI_BLACK_BACKGROUND +"\t\t	###################################################");
+			System.out.println(Cores.TEXT_WHITE + Cores.ANSI_BLACK_BACKGROUND
+					+ "\t\t	###################################################");
 			System.out.println("\t\t#				    		  #");
 			System.out.println("\t\t#	   	  BANCO DO WHISKY 	          #");
 			System.out.println("\t\t#				    		  #");
@@ -32,63 +60,63 @@ public class Menu {
 			System.out.println("\t\t#				    		  #");
 			System.out.println("\t\t###################################################" + Cores.TEXT_RESET);
 
-			
 			System.out.println("\n Digite a opção desejada: ");
-			
-		op = leia.nextInt();
-		
-		switch (op) {
-		case 1:
-			System.out.println("Criar Conta\n\n");
 
-			break;
-			
-		case 2:
-			System.out.println("Listar todas as Contas\n\n");
+			op = leia.nextInt();
 
-			break;
-			
-		case 3:
-			System.out.println("Consultar dados da Conta - por número\n\n");
+			switch (op) {
+			case 1:
+				System.out.println("Criar Conta\n\n");
 
-			break;
-			
-		case 4:
-			System.out.println("Atualizar dados da Conta\n\n");
+				break;
 
-			break;
-			
-		case 5:
-			System.out.println("Apagar a Conta\n\n");
+			case 2:
+				System.out.println("Listar todas as Contas\n\n");
 
-			break;
-			
-		case 6:
-			System.out.println("Saque\n\n");
+				break;
 
-			break;
-			
-		case 7:
-			System.out.println("Depósito\n\n");
+			case 3:
+				System.out.println("Consultar dados da Conta - por número\n\n");
 
-			break;
-			
-		case 8:
-			System.out.println("Transferência entre Contas\n\n");
+				break;
 
-			break;
-			
-		case 9:
-			System.out.println(Cores.TEXT_GREEN_BOLD + "\n\t\t BANCO DO WHISKY - Seu dinheiro, no lugar mais seguro! \n\n");
-			leia.close();
-			System.exit(0);
-			break;
-			
-		default:
-			System.out.println(Cores.TEXT_RED_BOLD +"\n\t\t Opção Inválida! \n");
-			break;
-	}
-		
+			case 4:
+				System.out.println("Atualizar dados da Conta\n\n");
+
+				break;
+
+			case 5:
+				System.out.println("Apagar a Conta\n\n");
+
+				break;
+
+			case 6:
+				System.out.println("Saque\n\n");
+
+				break;
+
+			case 7:
+				System.out.println("Depósito\n\n");
+
+				break;
+
+			case 8:
+				System.out.println("Transferência entre Contas\n\n");
+
+				break;
+
+			case 9:
+				System.out.println(
+						Cores.TEXT_GREEN_BOLD + "\n\t\t BANCO DO WHISKY - Seu dinheiro, no lugar mais seguro! \n\n");
+				leia.close();
+				System.exit(0);
+				break;
+
+			default:
+				System.out.println(Cores.TEXT_RED_BOLD + "\n\t\t Opção Inválida! \n");
+				break;
+			}
+
 		}
 	}
 
