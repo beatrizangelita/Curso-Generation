@@ -11,12 +11,14 @@ public class Menu {
 	public static void main(String[] args) {
 
 		// Teste da Classe Conta
+		
+		/* Foi removido esse teste por que a classe Conta implementou a classe abstrata
 		Conta conta = new Conta(1, 123, 1, "Adriana", 10000.0f);
 		conta.visualizar();
 		conta.sacar(12000.0f);
 		conta.visualizar();
 		conta.depositar(5000.0f);
-		conta.visualizar();
+		conta.visualizar();*/
 
 		// Teste da Classe Conta Corrente
 		ContaCorrente contaCorrente = new ContaCorrente(1, 123, 1, "José da Silva", 0.0f, 1000.0f);
