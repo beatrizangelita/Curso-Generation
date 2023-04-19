@@ -25,6 +25,9 @@ import com.generation.blogpessoal.repository.PostagemRepository;
 
 import jakarta.validation.Valid;
 
+// @RestController -> tornar essa classe uma controladora de rotas
+// @RequestMapping -> falar qual a rota para essas consultas
+
 @RestController
 @RequestMapping("/postagens")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
