@@ -1,3 +1,5 @@
+// Repository --> consultas no banco de dados 
+
 package com.generation.blogpessoal.repository;
 
 import java.util.List;
@@ -8,7 +10,8 @@ import org.springframework.data.repository.query.Param;
 import com.generation.blogpessoal.model.Tema;
 
 public interface TemaRepository extends JpaRepository<Tema, Long> {
-
+	
+	//Para conseguir acessar a tabela Postagem
 	// SELECT * FROM tb_temass WHERE descricao LIKE "%descricao%";
 	public List<Tema> findAllByDescricaoContainingIgnoreCase(@Param("descricao") String descricao);
 }

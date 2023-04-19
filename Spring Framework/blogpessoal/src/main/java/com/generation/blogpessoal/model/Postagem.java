@@ -1,6 +1,5 @@
 // Model --> modelagem do banco de dados(criação das tabelas)
 
-
 package com.generation.blogpessoal.model;
 
 import java.time.LocalDateTime;
@@ -37,7 +36,7 @@ public class Postagem {
 	@UpdateTimestamp // dar um update automaticamente na data
 	private LocalDateTime data; 
 
-	// relacionamento entre tabelas vários para 1
+	// Relacionamento entre tabelas - N:1
 	@ManyToOne
 	@JsonIgnoreProperties("postagem")
 	private Tema tema;

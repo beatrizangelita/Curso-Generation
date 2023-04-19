@@ -1,6 +1,6 @@
 // Controller é para controlar a rota das suas aplicações (Consulta)
 
-package com.generation.blogpessoal.controller;
+package com.generation.farmacia.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,74 +20,72 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.generation.blogpessoal.model.Postagem;
-import com.generation.blogpessoal.repository.PostagemRepository;
+import com.generation.farmacia.model.Produto;
+import com.generation.farmacia.repository.ProdutoRepository;
 
 import jakarta.validation.Valid;
 
-// @RestController -> tornar essa classe uma controladora de rotas
-// @RequestMapping -> falar qual a rota para essas consultas
+//@RestController -> tornar essa classe uma controladora de rotas
+//@RequestMapping -> falar qual a rota para essas consultas
 
 @RestController
-@RequestMapping("/postagens")
+@RequestMapping("/produtos")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-public class PostagemController {
-	
+public class ProdutoController {
+
 	@Autowired // inseção de dependencia --> está chamando a repository para consultar a tabela
-	private PostagemRepository postagemRepository;
+	private ProdutoRepository produtoRepository;
 
 	@GetMapping
 	// ResponseEntity --> é uma classe para dar apoio no StatusCode
-	public ResponseEntity<List<Postagem>> getAll(){ // colection list
-		
+	public ResponseEntity<List<Produto>> getAll() {
+
 		// ResponseEntity.ok ele vai fazer a resposta do insonia
 		// postagemRepository.findAll() traz tudo de dentro do banco de dados
-		return ResponseEntity.ok(postagemRepository.findAll()); 
+		return ResponseEntity.ok(produtoRepository.findAll());
 	}
 	
 	// SELECT * FROM tb_postagem WHERE id = id;
-	@GetMapping ("/{id}")
-	public ResponseEntity<Postagem> getById(@PathVariable Long id){
-		return postagemRepository.findById(id)
+	@GetMapping("/{id}")
+	public ResponseEntity<Produto> getById(@PathVariable Long id){
+		return produtoRepository.findById(id)
 				.map(resposta -> ResponseEntity.ok(resposta))
-				.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());	
-	}
-	
-	// SELECT * FROM tb_postagens WHERE titulo LIKE "%titulo%";
-	@GetMapping("/titulo/{titulo}")
-	public ResponseEntity<List<Postagem>> getByTitulo(@PathVariable String titulo){
-		return ResponseEntity.ok(postagemRepository
-					.findAllByTituloContainingIgnoreCase(titulo));
-	}
-	
-	// INSERT INTO tb_postagens (titulo, texto, data) VALUES ("Título", "Texto", CURRENT_TIMESTAMP());
-	@PostMapping
-	public ResponseEntity<Postagem> post(@Valid @RequestBody Postagem postagem){
-		return ResponseEntity.status(HttpStatus.CREATED)
-					.body(postagemRepository.save(postagem));
-	} 
-	
-	// UPDATE tb_postagens SET titulo = "titulo", texto = "texto", data = CURRENT_TIMESTAMP() WHERE id = id;
-	@PutMapping
-	public ResponseEntity<Postagem> put(@Valid @RequestBody Postagem postagem){
-		return postagemRepository.findById(postagem.getId())
-				.map(resposta -> ResponseEntity.status(HttpStatus.OK)
-						.body(postagemRepository.save(postagem)))
 				.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
 	}
 	
-	// DELETE FROM tb_postagens WHERE id = id;
+	// SELECT * FROM tb_postagens WHERE titulo LIKE "%nome%";
+		@GetMapping("/nome/{nome}")
+		public ResponseEntity<List<Produto>> getByTitulo(@PathVariable String nome){
+			return ResponseEntity.ok(produtoRepository
+						.findAllByNomeContainingIgnoreCase(nome));
+		}
+	
+	// INSERT INTO tb_postagens (nome, valor, codigo, quantidade, dt_validade) VALUES ("nome", "valor", "codigo", "quantidade", "dt_validade");
+	@PostMapping
+	public ResponseEntity<Produto> post(@Valid @RequestBody Produto produto){
+		return ResponseEntity.status(HttpStatus.CREATED)
+				.body(produtoRepository.save(produto));
+	}
+	
+	// UPDATE tb_postagens SET nome = "nome", valor = "valor", codigo = "codigo",  quantidade = "quantidade",  dt_validade = "dt_validade" WHERE id = id;
+	@PutMapping
+	public ResponseEntity<Produto> put(@Valid @RequestBody Produto produto){
+		return produtoRepository.findById(produto.getId())
+				.map(resposta -> ResponseEntity.status(HttpStatus.OK)
+						.body(produtoRepository.save(produto)))
+				.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+	}
+	
+	// DELETE FROM tb_produto WHERE id = id;
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	@DeleteMapping ("/{id}")
 	public void delete(@PathVariable Long id) {
-		Optional<Postagem> postagem = postagemRepository.findById(id);
+		Optional<Produto> produto = produtoRepository.findById(id);
 		
 		// Verifica se existe o ID dentro da tabela
-		if(postagem.isEmpty())
+		if(produto.isEmpty())
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 		
-		postagemRepository.deleteById(id);
+		produtoRepository.deleteById(id);
 	}
-	
-	
 }

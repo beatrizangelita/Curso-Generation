@@ -1,6 +1,6 @@
 // Controller é para controlar a rota das suas aplicações (Consulta)
 
-package com.generation.blogpessoal.controller;
+package com.generation.farmacia.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,60 +20,61 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.generation.blogpessoal.model.Tema;
-import com.generation.blogpessoal.repository.TemaRepository;
+import com.generation.farmacia.model.Categoria;
+import com.generation.farmacia.repository.CategoriaRepository;
 
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/temas")
+@RequestMapping("/categoria")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-public class TemaController {
-	
+public class CategoriaController {
+
 	@Autowired
-    private TemaRepository temaRepository;
+    private CategoriaRepository categoriaRepository;
     
     @GetMapping
-    public ResponseEntity<List<Tema>> getAll(){
-        return ResponseEntity.ok(temaRepository.findAll());
+    public ResponseEntity<List<Categoria>> getAll(){
+        return ResponseEntity.ok(categoriaRepository.findAll());
     }
     
     @GetMapping("/{id}")
-    public ResponseEntity<Tema> getById(@PathVariable Long id){
-        return temaRepository.findById(id)
+    public ResponseEntity<Categoria> getById(@PathVariable Long id){
+        return categoriaRepository.findById(id)
             .map(resposta -> ResponseEntity.ok(resposta))
             .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
     }
     
     @GetMapping("/descricao/{descricao}")
-    public ResponseEntity<List<Tema>> getByTitle(@PathVariable 
+    public ResponseEntity<List<Categoria>> getByTitle(@PathVariable 
     String descricao){
-        return ResponseEntity.ok(temaRepository
+        return ResponseEntity.ok(categoriaRepository
             .findAllByDescricaoContainingIgnoreCase(descricao));
     }
     
     @PostMapping
-    public ResponseEntity<Tema> post(@Valid @RequestBody Tema tema){
+    public ResponseEntity<Categoria> post(@Valid @RequestBody Categoria categoria){
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(temaRepository.save(tema));
+                .body(categoriaRepository.save(categoria));
     }
     
     @PutMapping
-    public ResponseEntity<Tema> put(@Valid @RequestBody Tema tema){
-        return temaRepository.findById(tema.getId())
+    public ResponseEntity<Categoria> put(@Valid @RequestBody Categoria categoria){
+        return categoriaRepository.findById(categoria.getId())
             .map(resposta -> ResponseEntity.status(HttpStatus.CREATED)
-            .body(temaRepository.save(tema)))
+            .body(categoriaRepository.save(categoria)))
             .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
     }
     
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
-        Optional<Tema> tema = temaRepository.findById(id);
+        Optional<Categoria> categoria = categoriaRepository.findById(id);
         
-        if(tema.isEmpty())
+        if(categoria.isEmpty())
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         
-        temaRepository.deleteById(id);              
+        categoriaRepository.deleteById(id);              
     }
+	
 }

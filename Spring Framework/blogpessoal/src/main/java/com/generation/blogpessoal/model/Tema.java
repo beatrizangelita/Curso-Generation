@@ -1,3 +1,5 @@
+// Model --> modelagem do banco de dados(criação das tabelas)
+
 package com.generation.blogpessoal.model;
 
 import java.util.List;
