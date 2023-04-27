@@ -41,74 +41,88 @@ public class Produtos {
 	
 	private int codigo;
 	
-	// Relacionamento entre tabelas - N:1
+		// Relacionamento entre tabelas - N:1
 		@ManyToOne
 		@JsonIgnoreProperties("produtos")
 		private Categoria categoria;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public int getQuantidade() {
-		return quantidade;
-	}
-
-	public void setQuantidade(int quantidade) {
-		this.quantidade = quantidade;
-	}
-
-	public String getMarca() {
-		return marca;
-	}
-
-	public void setMarca(String marca) {
-		this.marca = marca;
-	}
-
-	public String getModelo() {
-		return modelo;
-	}
-
-	public void setModelo(String modelo) {
-		this.modelo = modelo;
-	}
-
-	public BigDecimal getPreco() {
-		return preco;
-	}
-
-	public void setPreco(BigDecimal preco) {
-		this.preco = preco;
-	}
-
-	public int getCodigo() {
-		return codigo;
-	}
-
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
-	}
-
-	public Categoria getCategoria() {
-		return categoria;
-	}
-
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
-	}	
 	
+		// Relacionamento entre tabelas - N:1
+		@ManyToOne
+		@JsonIgnoreProperties("produtos")
+		private Usuario usuario;
+
+		// Getteres and Setteres 
+		
+		public Long getId() {
+			return id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public String getNome() {
+			return nome;
+		}
+
+		public void setNome(String nome) {
+			this.nome = nome;
+		}
+
+		public int getQuantidade() {
+			return quantidade;
+		}
+
+		public void setQuantidade(int quantidade) {
+			this.quantidade = quantidade;
+		}
+
+		public String getMarca() {
+			return marca;
+		}
+
+		public void setMarca(String marca) {
+			this.marca = marca;
+		}
+
+		public String getModelo() {
+			return modelo;
+		}
+
+		public void setModelo(String modelo) {
+			this.modelo = modelo;
+		}
+
+		public BigDecimal getPreco() {
+			return preco;
+		}
+
+		public void setPreco(BigDecimal preco) {
+			this.preco = preco;
+		}
+
+		public int getCodigo() {
+			return codigo;
+		}
+
+		public void setCodigo(int codigo) {
+			this.codigo = codigo;
+		}
+
+		public Categoria getCategoria() {
+			return categoria;
+		}
+
+		public void setCategoria(Categoria categoria) {
+			this.categoria = categoria;
+		}
+
+		public Usuario getUsuario() {
+			return usuario;
+		}
+
+		public void setUsuario(Usuario usuario) {
+			this.usuario = usuario;
+		}
 	
 }
