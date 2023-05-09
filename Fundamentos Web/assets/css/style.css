@@ -1,0 +1,46 @@
+p{
+    /* tamanho da letra */
+    font-size: 24px;
+    /* cor da letra */
+    color: red;
+    /* fundo do texto */
+    /* background-color: antiquewhite; */
+    /* largura da tela */
+    width: 50%;
+    /* altura 
+    height: 550px;*/
+    /* margem: cima, direita, baixo, esquerda */
+    padding: 30px 10px 50px 100px;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    display: inline;
+    padding: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: #d7445c;
+    font-size: 32px;
+}
+
+/* mouse estive em cima dele */
+a:hover{
+    color: #8a1125;
+}
+
+/* classe */
+.link{
+    text-decoration: overline;
+}
+
+.banner{
+    border: 2px solid red;
+    display: flex;
+    align-items: center;
+    background-color: #ddd;
+}
